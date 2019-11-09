@@ -14,7 +14,7 @@ function naikAngkot(arr) {
   obj.penumpang=arr[i][0]
   obj.naikDari=arr[i][1]
   obj.tujuan=arr[i][2]
-  obj.baya= (rute.indexOf(obj.tujuan)-rute.indexOf(obj.naikDari))*2000
+  obj.bayar= (rute.indexOf(obj.tujuan)-rute.indexOf(obj.naikDari))*2000
   newarr.push(obj)
  }return newarr
 }

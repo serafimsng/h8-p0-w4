@@ -4,11 +4,6 @@ function checkAB(str) {
 var s = str.split('')
 var a = ''
 var b = ''
-// for(var i = 0; i < s.length-1; i++){
-// 	if(s[i] === ' '){
-// 		s.splice(i,1)
-// 	}
-// }
 for(var j = 0; j< s.length-1;j++){
 	if (s[j] === 'a') {
 		a += j 

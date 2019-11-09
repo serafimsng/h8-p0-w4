@@ -1,40 +1,39 @@
 function digitPerkalianMinimum(angka) {
-  var x =[]
+  var pasangan =[]
 
   for (var i =0; i <= angka; i++){
   	for (var j = 0; j <= angka; j++){
   		if (i*j===angka){
-  			x.push([i,j])
+  			pasangan.push([i,j])
   		}
   	}
   }
   
-  for(var k = 0; k < x.length; k++){
-  	for(var l = 0; l < x.length; l++){
-  		if(x[k][0]+x[k][1] === x[l][0]+x[l][1] && x.length>1){
-  			x.pop(x[k])
+  for(var k = 0; k < pasangan.length; k++){
+  	for(var l = 0; l < pasangan.length; l++){
+  		if(pasangan[k][0]+pasangan[k][1] === pasangan[l][0]+pasangan[l][1] && pasangan.length>1){
+  			pasangan.pop(pasangan[k])
   		}
   	}
   }
   // console.log(x);
-  var n = []
-  // const arrSum = arr => arr.reduce((a,b) => a + b, 0)
-  for(var m = 0; m < x.length; m++){
+  var jumlah = []
+  for(var m = 0; m < pasangan.length; m++){
   	const arrSum = arr => arr.reduce((a,b) => a + b, 0)
-  	n.push(arrSum(x[m]))
-  	if(String(n).length===1){
-  		return String(x).split(',').length
+  	jumlah.push(arrSum(pasangan[m]))
+  	if(String(jumlah).length===1){
+  		return String(pasangan).split(',').length
   	}
 
   }
   
-  for(var y = 0; y < n.length; y++){
-  		if(n[y] === Math.min(...n)){
-  			return String(x[y]).length-1
+  for(var y = 0; y < jumlah.length; y++){
+  		if(jumlah[y] === Math.min(...jumlah)){
+  			return String(pasangan[y]).length-1
   		}
   	}
   	
-	return n
+	return jumlah
 }
 
 // TEST CASES

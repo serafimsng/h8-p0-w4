@@ -1,7 +1,3 @@
-
-
-
-
 function urutkanAbjad(str) {
   var x = ''
 

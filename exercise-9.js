@@ -18,11 +18,6 @@ for(var j = 0; j< s.length-1;j++){
 }
 var c = a.split('')
 var d = b.split('')
-// console.log(s);
-// console.log(a);
-// console.log(c);
-// console.log(b);
-// console.log(d);
 var x =0
 var y =0
 for(var k=0; k<Math.max(c.length,d.length);k++){

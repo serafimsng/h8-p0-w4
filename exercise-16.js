@@ -1,5 +1,26 @@
 function graduates (students) {
-  // Code disini
+  var kelas=[]
+  var obj={}
+  for(let i=0;i<students.length;i++){
+    kelas.push(students[i].class)
+  }
+  var newkelas=[...new Set(kelas)]
+  for(let i=0;i<newkelas.length;i++){
+    var daftarKelas=newkelas[i]
+    obj[daftarKelas]=[]
+  }
+  for(let prop in obj){
+    for(let i=0;i<students.length;i++){
+      var id={}
+      if(students[i].score > 75 && prop===students[i].class){
+        id.name=students[i].name
+        id.score=students[i].score
+        obj[prop].push(id)
+      }
+    }
+    
+  }
+  return obj
 }
 
 console.log(graduates([

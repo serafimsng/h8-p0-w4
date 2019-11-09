@@ -15,20 +15,6 @@ function changeMe(arr) {
 			console.log(x,obj);
 		}
 }
-	// for(var i = arr.length-1; i>=0; i--){
-	// 	var a = i+1
-	// firstName=arr[i][0]
-	// lastName=arr[i][1]
-	// gender=arr[i][2]
-	// age=arr[i][3]
-	// if(arr[i][3] === undefined){
-	// 	x.age = 'Invalid Birth Year'
-	// }
-	// x = a +'. '+ `${arr[i][0]} ${arr[i][1]} \n { firstName: ${arr[i][0]} \n lastName: ${arr[i][1]} \n gender: ${arr[i][2]} \n age: ${arr[i][3]}}`+ '\n' + x
-	// }
-	// if(arr.length === 0){
-	// 	return 'No Data'
-	// }
 
 
 // TEST CASES

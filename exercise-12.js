@@ -42,7 +42,7 @@ function countProfit(shoppers) {
   		}
   	}
   	newarr.push(obj)
-}
+  }
 	
   return newarr
 

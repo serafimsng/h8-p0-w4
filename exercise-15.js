@@ -4,67 +4,26 @@
 //   <class>: { name: <name>, score: <score> }
 // }
 function highestScore (students) {
-var data={}
-var listKelas=[]
-var listMurid=[]
-var listNilai=[]
-
-for(var i=0; i<students.length;i++){
-  //list Nilai
-  var nilai= students[i].score
-  listNilai.push(nilai)
-  // list murid
-  var murid = students[i].name
-  listMurid.push(murid)
-  //untuk class
-  var kelas=students[i].class
-  if(listKelas.includes(students[i].class)){
-
-  }else{
-    listKelas.push(kelas)
+  var kelas=[]
+  var obj={}
+  for(let i=0;i<students.length;i++){
+    kelas.push(students[i].class)
   }
-
-
-
-}
-for(var j=0;j<listKelas.length; j++){
-  var objNilai={}
-  for(var k=0;k<students.length;k++){
-    if(listKelas[j] == students[k].class && objNilai.includes(students[k].score)==false){
-      objNilai.nilai=students[k].score
+  var newkelas=[...new Set(kelas)]
+  for(let i=0;i<newkelas.length;i++){
+    var daftarKelas=newkelas[i]
+    obj[daftarKelas]={name:'', score:0}
+  }
+  for(let i=0;i<students.length; i++){
+    for(let prop in obj){
+      if(obj[prop].score<students[i].score && prop===students[i].class){
+        obj[prop].name=students[i].name
+        obj[prop].score=students[i].score
+      }
     }
-      console.log(objNilai);
   }
-
+  return obj
 }
-
-listNilai.sort()
-
-
-
-
-// console.log(listNilai);
-// console.log(listKelas);
-// console.log(listMurid);
-}
-
-// const obj1 = {
-//   innerObj:{
-//     name:'Bob'
-//   },
-//   innerOBj2:{
-//     color:'blue'
-//   }
-// }
-
-// const obj2 = {
-//   lastName:'Some',
-//   age:45
-// }
-
-// obj1.innerObj = Object.assign(obj1.innerObj,obj2);
-// console.log(obj1);
-
 
 // TEST CASE
 console.log(highestScore([

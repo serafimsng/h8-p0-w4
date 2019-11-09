@@ -10,34 +10,44 @@ Contohnya [1, 1, 1] adalah -1*/
 
 
 function cariModus(arr) {
-var x =0
-var y = 0
-var modus = 0
-// arr.sort(function(a1,a2){return a1 - a2})
-// console.log(arr)
-	for(var i=0; i < arr.length; i++){
-		for(var j = 0; j < arr.length; j++){
-			if(arr[i]===arr[j] && i !== j){
-				x ++
-			}
-			if(x>y){
-				y = x
-				modus = i
-			}
-		}
-		}console.log(modus);
-		if(modus===0){
-			return -1
-		}
-		var sama = 0
-		for(var k = 0; k <= arr.length;k++){
-			sama += arr[k]
-			if (sama/arr.length===arr[k]) {
-				return -1
-			}
-		}
+  // you can only write your code here!
+  var baru=arr
+  var newarr=[...new Set(baru)].filter(item => arr.includes(item))
+  if(newarr.length==1){
+  	return -1
+  }
+  var tamp=[]
+  var result=[]
+  for(let i=0;i<arr.length;i++){
+  	tamp.push(arr[i])
+  	for(let j=0;j<tamp.length;j++){
+  		if(tamp[j]==arr[i+1]){
+  			result.push(tamp[j])
+  		}
+  	}
+  }
+  if(result.length===0){
+  	return -1
+  }
+  var jumlah=0
+  for(let i=0;i<result.length;i++){
+  	if(result[i]==result[i+1]){
+  		jumlah++
+  	}
+  }
+  if(jumlah>1){
+  	result.splice(0,jumlah)
+  }
 
-		return arr[modus]
+  for(let i=0;i<arr.length;i++){
+  	for(let j=0;j<result.length;j++){
+  		if(arr[i]===result[j] && i<j){
+  			return arr[i]
+  		}
+  	}
+  }
+  
+  return result[0]
 
 }
 
@@ -51,4 +61,4 @@ console.log(cariModus([5, 10, 10, 6, 5])); // 5
 console.log(cariModus([10, 3, 1, 2, 5])); // -1
 console.log(cariModus([1, 2, 3, 3, 4, 5])); // 3
 console.log(cariModus([7, 7, 7, 7, 7])); // -1
-console.log(cariModus([7, 7, 7, 7, 3, 5])); // -1
+console.log(cariModus([7, 7, 7, 7, 3, 5,5])); // -1

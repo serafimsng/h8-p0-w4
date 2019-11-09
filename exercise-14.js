@@ -17,7 +17,6 @@ function naikAngkot(arr) {
   obj.baya= (rute.indexOf(obj.tujuan)-rute.indexOf(obj.naikDari))*2000
   newarr.push(obj)
  }return newarr
-
 }
 
 //TEST CASE
